@@ -77,3 +77,17 @@ colnames(tab)<-c("Sgrnas", "Genes", "Addgene")
 rownames(tab)<-c("# values", "min", "max", "median", "25th quartile", "75th quartile", "std dev", "90th/10th quartile")
 tab
 
+#Section not finished yet
+jackknife <- function(data){
+
+
+}
+
+
+nullmod = jackknife(counts)
+hypotest = willcox.test(counts,nullmod)
+print(hypotest)
+
+
+
+
