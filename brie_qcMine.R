@@ -14,7 +14,7 @@ par(mfrow=c(3,3))
 # Once the code is run, it will open 2 new windows with the graphs on them. From there, go to file then save as. Save both of the sets of graphs
 # as PDFs, then you can import them into the report later on.
 
-counts = read.table("C:/Users/tmlwe/Documents/PythonScripts/brie_counts/BrieQ20.extended-counts.txt", header = TRUE, sep="\t", nrows = 78635, stringsAsFactors = FALSE)
+counts = read.table("C:/Users/.../Documents/PythonScripts/brie_counts/BrieQ20.extended-counts.txt", header = TRUE, sep="\t", nrows = 78635, stringsAsFactors = FALSE)
 counts[,4] 
 hist(log2(counts[,4]),breaks=100,main="Brie Library, sgRNAs",xlab="Log2 counts per sgRNA",ylab="Number of sgRNAs")
 boxplot(counts[,4],main="Read Distribution, sgRNAs",ylab="Counts per sgRNA")
@@ -31,7 +31,7 @@ plot(genes_cdf,xlim=c(0,5000),xlab="Genes ranked by abundance",ylab="Fraction to
 # This section creates graphs from the pre-amplification data sent by Addgene. If you do have such data for the new library,
 # then change the C:...txt section to the file path to that data. If you don't then you can put "#" before each line.
 
-addgene = read.table("C:/Users/tmlwe/Documents/PythonScripts/brie_counts/addgene-read_counts.txt", sep=",")
+addgene = read.table("C:/Users/.../Documents/PythonScripts/brie_counts/addgene-read_counts.txt", sep=",")
 hist(log2(addgene[,2]+1),breaks=50,main="Brie Library, Addgene",xlab="Log2 counts per sgRNA",ylab="Number of sgRNAs")
 boxplot(addgene[,2],main="Read Distribution, Addgene",ylab="Counts per gene Addgene data")
 addgene_cdf = ecdf(addgene[,2])
@@ -40,7 +40,7 @@ plot(addgene_cdf,xlim=c(0,500),xlab="Add sgRNAs ranked by abundance",ylab="Fract
 #windows(w=12,h=4)
 #par(mfrow=c(1,3))
 
-#controls = read.table("C:/Users/tmlwe/Documents/PythonScripts/BrieQ20.extended-counts.txt", header = FALSE, sep="\t", skip = 76442, nrows = 77442)
+#controls = read.table("C:/Users/.../Documents/PythonScripts/BrieQ20.extended-counts.txt", header = FALSE, sep="\t", skip = 76442, nrows = 77442)
 #hist(log2(controls[,3]+1),breaks=50,main="Brie Library, Controls",xlab="Log2 counts per control",ylab="Number of Controls")
 #boxplot(controls[,3],main="Read Distribution, Controls",ylab="Counts per control")
 #controls_cdf = ecdf(controls[,3])
