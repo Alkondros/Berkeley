@@ -83,7 +83,7 @@ hypotest1 = t.test(counts[,4], addgene[,2])
 
 print(hypotest1)
 
-nullmod =   jackknife(counts[,4], bias)
+nullmod =   jackknife(counts[,4], var)
 hypotest2 = willcox.test(counts[,4],nullmod)
 print(hypotest2)
 
