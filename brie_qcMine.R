@@ -78,13 +78,9 @@ rownames(tab)<-c("# values", "min", "max", "median", "25th quartile", "75th quar
 tab
 
 #Section not finished yet
-jackknife <- function(data){
 
 
-}
-
-
-nullmod = jackknife(counts)
+nullmod = jackknife(counts, var)
 hypotest = willcox.test(counts,nullmod)
 print(hypotest)
 
