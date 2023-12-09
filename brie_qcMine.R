@@ -1,3 +1,5 @@
+install.packages('bootstrap')
+
 # Should have 1 file available: 
 # <library>.counts.txt
 # the sgrna, gene, and controls data are all in that one txt file.
@@ -51,7 +53,7 @@ plot(addgene_cdf,xlim=c(0,500),xlab="Add sgRNAs ranked by abundance",ylab="Fract
 windows(w=12,h=4)
 par(mfrow=c(1,4))
 library(vioplot)
-vioplot(addgene[,2],ylim=c(0,10000),col="green")
+vioplot(addgene[,2],ylim=c(0,500),col="green")
 vioplot(counts[,4],ylim=c(0,10000),col="tomato",add=TRUE)
 vioplot(genes[,2],ylim=c(0,10000),col="orange",add=TRUE)
 
@@ -80,7 +82,7 @@ tab
 #Section not finished yet
 
 
-nullmod = jackknife(counts, var)
+nullmod =   jackknife(counts, bias)
 hypotest = willcox.test(counts,nullmod)
 print(hypotest)
 
