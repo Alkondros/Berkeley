@@ -79,7 +79,7 @@ rownames(tab)<-c("# values", "min", "max", "median", "25th quartile", "75th quar
 tab
 
 #Section not finished yet
-hypotest1 = t.test(counts[,4], addgene[,2]
+hypotest1 = t.test(counts[,4], addgene[,2])
 
 print(hypotest1)
 
