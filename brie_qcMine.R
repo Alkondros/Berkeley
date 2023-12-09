@@ -17,7 +17,6 @@ par(mfrow=c(3,3))
 # as PDFs, then you can import them into the report later on.
 
 counts = read.table("C:/Users/.../Documents/PythonScripts/brie_counts/BrieQ20.extended-counts.txt", header = TRUE, sep="\t", nrows = 78635, stringsAsFactors = FALSE)
-counts[,4] 
 hist(log2(counts[,4]),breaks=100,main="Brie Library, sgRNAs",xlab="Log2 counts per sgRNA",ylab="Number of sgRNAs")
 boxplot(counts[,4],main="Read Distribution, sgRNAs",ylab="Counts per sgRNA")
 sgrna_cdf = ecdf(counts[,4])
@@ -80,11 +79,13 @@ rownames(tab)<-c("# values", "min", "max", "median", "25th quartile", "75th quar
 tab
 
 #Section not finished yet
+hypotest1 = t.test(counts[,4], addgene[,2]
 
+print(hypotest1)
 
-nullmod =   jackknife(counts, bias)
-hypotest = willcox.test(counts,nullmod)
-print(hypotest)
+nullmod =   jackknife(counts[,4], bias)
+hypotest2 = willcox.test(counts[,4],nullmod)
+print(hypotest2)
 
 
 
